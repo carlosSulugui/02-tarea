@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MySQL - @localhost" uuid="e159ba1a-ecdf-4bd5-bd8b-8f32e13e5c02">
+    <data-source source="LOCAL" name="pure9fzm2r51wzt2@wcwimj6zu5aaddlj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com" uuid="db53b5ea-9003-4aeb-ae5e-7e9f8ecb8034">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="MySQL - @localhost [2]" uuid="36377e08-34a9-4643-bcb6-20e83f9d79b0">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="tareasUMG@database-1.cdrjlvrnxttv.us-east-2.rds.amazonaws.com" uuid="ec5254e5-376c-4cff-b053-996262dba135">
-      <driver-ref>mysql_aurora</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mariadb://database-1.cdrjlvrnxttv.us-east-2.rds.amazonaws.com:3306/tareasUMG</jdbc-url>
+      <jdbc-url>jdbc:mysql://wcwimj6zu5aaddlj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/pure9fzm2r51wzt2</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
