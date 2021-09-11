@@ -1,31 +1,43 @@
 package com.example.tarea.utils;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Objects;
+import java.util.Properties;
 
 
 public class Conexion {
-    public static String driver = "com.mysql.cj.jdbc.Driver";
-    public static String dataBase = "tareasUMG";
-    public static String host = "database-1.cdrjlvrnxttv.us-east-2.rds.amazonaws.com";
-    public static String user = "admin";
-    public static String password = "12345678";
 
-    public static String url = "jdbc:mysql://"+host+"/"+dataBase+"?autoReconnect=true&useSSL=false"; //connection ssl false
-    //private static Connection conn;
     private static java.sql.Connection conn = null;
-    //Constructor
-    public Conexion(){
+    public Conexion() throws IOException {
 
+        String rootPath = Objects.requireNonNull(Thread.currentThread().getContextClassLoader().getResource("")).getPath();
+        String appConfigPath = rootPath + "local.properties";
+
+        Properties props = new Properties();
+        props.load(new FileInputStream(appConfigPath));
+
+        String database = props.getProperty("connection.db");
+        String host = props.getProperty("connection.db.host");
+        String user = props.getProperty("connection.db.user");
+        String password = props.getProperty("connection.db.password");
+        String url = "jdbc:mysql://" +
+                host+
+                ":" +
+                props.getProperty("connection.db.port")+
+                "/"+ database;
         try {
-            Class.forName(driver);
+            Class.forName(props.getProperty("connection.db.driver"));
             conn = DriverManager.getConnection(url, user, password);
-            //System.out.println(conn != null? "Data base is connected": "Data base is not connected");
+
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Internal Error: "+e.getMessage());
         }
     }
 
-    public java.sql.Connection getConnection(){
+    public Connection getConnection(){
         return conn;
     }
 }
